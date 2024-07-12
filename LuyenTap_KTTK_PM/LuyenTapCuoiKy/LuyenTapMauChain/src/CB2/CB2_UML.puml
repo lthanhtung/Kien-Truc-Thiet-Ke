@@ -1,0 +1,24 @@
+@startuml
+abstract class ChucVu{
+ + void ChoVay(int SotienVay)
+ + ChucVu ketiep(ChucVu cv)
+}
+
+class ChucVuThap{
+    + String TenChucVu
+    + int HanMucDuyetVay
+    + void ChoVay(int SotienVay)
+    + ChucVu ketiep(ChucVu cv)
+}
+
+class ChucVuCaoNhat{
++ String TenChucVu
+    + int HanMucDuyetVay
+    + void ChoVay(int SotienVay)
+    + ChucVu ketiep(ChucVu cv)
+}
+ChucVu <|-- ChucVuThap
+ChucVu <|-- ChucVuCaoNhat
+ChucVuThap o--> ChucVu : captren
+
+@enduml

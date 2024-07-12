@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract NhanVienF88{
+    String Ten, Chucvu
+    int HanMucDuyetVay
+    public {abstract} void duyetkhoangvay(int SoTienVay)
+    public {abstract} NhanVienF88 capTren(NhanVienF88 nv)
+
+}
+
+NhanVienF88 <|-- ChuTich
+NhanVienF88 <|-- NhanVien
+NhanVien --> NhanVienF88 : CapTren
+
+note bottom of ChuTich
+    Phương thức duyetkhoangvay:
+    Nếu Số tiền vay <= HanMucDuyetVay :
+        in Chủ Tịch duyệt mức vay  SoTienVay
+    Ngược lại
+        Ra Vcb vay
+end note
+
+note bottom of NhanVien
+    Phương thức duyetkhoangvay:
+    Nếu Số tiền vay <= HanMucDuyetVay :
+        in: Chucvu nhân viên duyệt mức vay  SoTienVay
+    Ngược lại
+        Chuyển khoảng vay cho capTren duyệt
+end note
+
+
+@enduml

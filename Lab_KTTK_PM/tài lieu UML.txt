@@ -1,0 +1,2 @@
+--|>: kế thừa
+-->: chứa các thành phần

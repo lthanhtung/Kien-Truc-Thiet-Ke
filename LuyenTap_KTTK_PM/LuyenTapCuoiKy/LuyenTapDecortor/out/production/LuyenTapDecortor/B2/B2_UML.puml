@@ -1,0 +1,14 @@
+@startuml
+abstract class Tokenize
+class TachTu
+
+class TokenizeDecorator
+class TachTheoTuDung
+class TachTheoDauCau
+
+Tokenize <|-- TachTu
+Tokenize <|-- TokenizeDecorator
+TokenizeDecorator <|-- TachTheoTuDung
+TokenizeDecorator <|-- TachTheoDauCau
+
+@enduml

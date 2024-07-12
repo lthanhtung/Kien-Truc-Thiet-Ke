@@ -1,0 +1,24 @@
+@startuml
+class ATM{
+    List<TaiKhoangObserver> taikhoang;
+    + void NhanThe(TaiKhoangObserver a)
+    + void TraThe(TaiKhoangObserver a)
+    + void kiemTraTienRut()
+    + void rutTien()
+}
+interface TaiKhoangObserver{
+ + void KiemTraSoDu(int soduToiThieu)
+ + void nhanThongBao()
+}
+class TaiKhoang{
+    int soDu
+    String TenTK
+    + void DutThe()
+    + void Rutthe()
+}
+
+TaiKhoangObserver <|-- TaiKhoang
+ATM --> TaiKhoangObserver : observer
+TaiKhoang --> ATM : subject
+
+@enduml

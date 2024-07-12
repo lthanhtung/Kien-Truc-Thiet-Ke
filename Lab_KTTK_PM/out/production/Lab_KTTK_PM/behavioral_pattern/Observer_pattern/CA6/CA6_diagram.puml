@@ -1,0 +1,27 @@
+@startuml
+class Dashboard
+{
+}
+interface PlayerDataListener
+{
+    List<PlayerData> DsNguoiChoi
+  + void CapNhap(PlayerData data)
+}
+class PlayerData
+{
+    PlayerDataListener listenner;
+    String thoigian
+    int countdown
+    int grade
+    + void ThemNguoiChoi(PlayerData data))
+    + void XoaNguoiChoi(PlayerData data))
+    + void setdiem()
+    + void setthoigian()
+    + void setsoluotchoi()
+}
+PlayerDataListener <|.. Dashboard: listenner
+PlayerData --> PlayerDataListener
+PlayerData <-- Dashboard: data
+
+
+@enduml

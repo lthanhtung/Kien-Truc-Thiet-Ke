@@ -1,0 +1,19 @@
+@startuml
+abstract class MenhGia{
+ + void inmenhgia(int sotien)
+ + MenhGia KeTiep(MenhGia menhgia)
+}
+class MenhGiaThap{
+  int MenhGia;
+  + void inmenhgia(int sotien)
+  + MenhGia KeTiep(MenhGia menhgia)
+}
+class MenhGiaCaoNhat{
+    int MenhGia;
+  + void inmenhgia()
+  + MenhGia KeTiep(MenhGia menhgia)
+}
+MenhGia <|-- MenhGiaThap
+MenhGia <|-- MenhGiaCaoNhat
+MenhGiaThap o--> MenhGia: keTiep
+@enduml

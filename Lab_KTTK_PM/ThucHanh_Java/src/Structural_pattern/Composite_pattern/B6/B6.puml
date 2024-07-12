@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+abstract class BNode
+BNode <|-- InnerNode
+BNode <|.. Leaft
+InnerNode -->"1" BNode :left
+InnerNode -->"1" BNode:right
+abstract class BNode
+{
+     int value
+     + {abstract} void addL(Bnode node)
+     + {abstract} void addR(Bnode node)
+     + {abstract} void RemoveL(BNode node)
+     + {abstract} void RemoveR(Bnode node)
+     + {abstract} String travle()
+}
+class InnerNode{
+    + String travel()
+}
+
+note left of InnerNode::travel
+   Duyệt theo thứ tự NLR
+   - Đưa value của note đang đứng vào stringBuider
+   - Kiểm tra left!= null:
+       Đưa Chuỗi của left vào stringBuider
+   - Kiểm tra right!= null:
+       Đưa Chuỗi của right vào stringBuider
+end note
+
+note right of InnerNode
+composite
+end note
+
+note right of Leaft
+composite
+end note
+
+@enduml

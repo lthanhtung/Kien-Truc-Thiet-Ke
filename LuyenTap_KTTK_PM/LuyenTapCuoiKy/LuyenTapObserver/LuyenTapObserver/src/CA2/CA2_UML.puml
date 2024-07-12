@@ -1,0 +1,24 @@
+@startuml
+class Activity{
+ + SoLanBam;
++ Attach(ButtonObserver a)
++ Detach(ButtonObserver a)
++ Onclick()
+}
+
+abstract class ButtonObserver{
++ Click()
+}
+
+class ConcreateButton{
+
+ + DangKy()
+ + HuyDangKy()
+ + Click()
+}
+
+ButtonObserver <|-- ConcreateButton
+Activity --> ButtonObserver: observer
+ConcreateButton --> Activity
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+abstract class CapBac{
+    + void TinhTienDien(int MucKW)
+    + CapBac BatTren(CapBac c)
+}
+class BacThap{
+    + int Min;
+    + int Max;
+    + void TinhTienDien(int SoKW)
+    + CapBac BatTren(CapBac c)
+}
+class BacCaoNhat{
+    + int Min;
+    + int Max;
+    + void TinhTienDien(int SoKW)
+    + CapBac BatTren(CapBac c)
+}
+
+CapBac <|-- BacThap
+CapBac <|-- BacCaoNhat
+BacThap o--> CapBac : bactren
+@enduml

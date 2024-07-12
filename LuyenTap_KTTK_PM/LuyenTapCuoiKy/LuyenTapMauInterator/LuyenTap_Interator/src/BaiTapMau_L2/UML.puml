@@ -1,0 +1,20 @@
+@startuml
+class TapHop{
+ + List<Integer> ListSoNguyen
+
+ + int GetItem(int i)
+ + int count()
+}
+class iterator{
+    + Next()
+    + hastNext()
+}
+TapHop ..> iterator
+iterator --> TapHop
+note bottom of iterator
+ Sử dụng lớp iterator có sẵn
+ của Java
+end note
+
+
+@enduml

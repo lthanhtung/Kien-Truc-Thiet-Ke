@@ -1,0 +1,30 @@
+@startuml
+abstract class TiGiaSubject
+{
+
++ attach(NhaDauTuObserver a)
++ detach(NhaDauTuObserver a)
++ Notify()
+}
+abstract class NhaDauTuObserver{
++ Update()
+}
+class TiGia
+{
++ attach(NhaDauTuObserver a)
++ detach(NhaDauTuObserver a)
++ Notify()
+
+}
+class NhaDauTu{
+    TiGia tigia;
+    + DangKY(TiGia a)
+    + Remove(TiGia a)
+    + Update()
+}
+TiGiaSubject <|-- TiGia
+NhaDauTuObserver <|-- NhaDauTu
+TiGiaSubject --> NhaDauTuObserver: observer
+NhaDauTu <-- TiGia:subject
+
+@enduml

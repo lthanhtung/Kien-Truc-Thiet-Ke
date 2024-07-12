@@ -1,0 +1,38 @@
+@startuml
+abstract class Widget{
+    show()
+}
+
+class WidgetCreate{
+    + String Ten;
+    + show()
+}
+
+class WidgetDecorator{
+    + Show()
+}
+class Icon{
+    + String Ten
+    + Show()
+}
+class Text{
+    + String Ten
+    + Show()
+}
+class Button{
+    + String Ten
+    + Show()
+}
+class RadioButton{
+    + String Ten
+    + Show()
+}
+
+Widget <|-- WidgetCreate
+Widget <|-- WidgetDecorator
+WidgetDecorator o--> Widget:widget
+WidgetDecorator <|-- Icon
+WidgetDecorator <|-- Text
+WidgetDecorator <|-- Button
+WidgetDecorator <|-- RadioButton
+@enduml

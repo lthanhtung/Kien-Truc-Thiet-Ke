@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+interface TaiKhoanObserver
+{
+   public void kiemTraSodu();
+   public void nhanThongBao();
+
+}
+
+class ATM
+{
+List<TaiKhoanObserver> observer
+    nhanthe(TaiKhoangATM atm)
+    trathe(TaiKhoangATM atm))
+    rutTien();
+}
+
+
+
+
+class TaiKhoan
+{
+int Sodu
+String tenTK
+DuaTheVaoATM();
+rutTienKhoiATM();
+public <<implement>> void rutTien()
+}
+
+TaiKhoan --|> TaiKhoanObserver
+ATM --> TaiKhoanObserver : atm
+TaiKhoan ..> ATM
+
+note bottom of TaiKhoan
+    observer
+end note
+@enduml

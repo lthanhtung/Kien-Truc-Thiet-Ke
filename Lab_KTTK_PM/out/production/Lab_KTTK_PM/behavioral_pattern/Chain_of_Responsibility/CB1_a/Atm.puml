@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract ATM_TheoMenhGia
+{
+int menhgia
+public {abstract} ATM_TheoMenhGia keTiep(ATM_TheoMenhGia k)
+public {abstract} void rutTien(int Sotien)
+}
+
+ATM_TheoMenhGia <|-- MenhGiaThapnhat
+ATM_TheoMenhGia <|-- MenhGia
+MenhGia--> ATM_TheoMenhGia:ketiep
+
+note bottom of MenhGiaThapnhat
+Phương thức rutTien
+Tính số tờ tiền và in ra số tờ
+end note
+
+note bottom of MenhGia
+    Tính số tờ:soTo = soTien/MenhGia
+    Tính số dư:soDu = soTien%menhGia
+    Nếu soTo > 0 in ra số tờ
+    Nếu số dư > 0 Chuyển số dư sang phần kế tiếp
+end note
+
+@enduml

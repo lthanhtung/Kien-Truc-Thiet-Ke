@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class Aggregate
+{
+
++{abstract} Iterator createIterator()
+}
+
+interface MyIterator
+{
+    + object first();
+    + object next();
+    + bool isdone();
+    + object curentItem();
+}
+class ArrayAggregate
+{
+- int[] array
+    + int getItem(int i)
+    + int count()
+}
+class ArrayIterator
+
+ArrayAggregate <|-- Aggregate
+MyIterator <|.. ArrayIterator
+ArrayIterator --> ArrayAggregate : array
+
+
+@enduml

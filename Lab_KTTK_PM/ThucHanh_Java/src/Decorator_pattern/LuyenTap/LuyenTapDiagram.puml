@@ -1,0 +1,28 @@
+@startuml
+abstract class PC{
+ # String PC , RAM, MainBoard, CPU,...
+ # int vMainboard, vCPU, vRAM, vStorage, Screen
+{abstract} String build();
+{abstract} in value();
+}
+class conCreatePC
+{
+   # String nCPU
+   # int nvCPU
+}
+abstract class PCdecorator
+class UpdateRAM
+{
+String nRam;
+int value;
+
+}
+class UpdateCPU
+
+PC <|-- conCreatePC
+PC <|-- PCdecorator
+PCdecorator <|-- UpdateRAM
+PCdecorator <|-- UpdateCPU
+PCdecorator --> PC :pc
+
+@enduml

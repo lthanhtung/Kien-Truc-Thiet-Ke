@@ -1,0 +1,28 @@
+@startuml
+abstract class BieuThuc{
++ float GiaTri()
++ String bieuThuc();
+}
+
+class BieuThucDonGian{
+    - float toanHang
+    + float GiaTri()
+    + String bieuThuc()
+}
+class BieuThucDecorator{
+    + float GiaTri()
+    + String bieuThuc()
+}
+class ConBieuThucDecorator{
+    + float toanHang;
+    + float GiaTri();
+    + String bieuThuc();
+}
+
+BieuThuc <|-- BieuThucDonGian
+BieuThuc <|-- BieuThucDecorator
+BieuThucDecorator --> BieuThuc: bieuthuc
+BieuThucDecorator <|-- ConBieuThucDecorator
+
+
+@enduml

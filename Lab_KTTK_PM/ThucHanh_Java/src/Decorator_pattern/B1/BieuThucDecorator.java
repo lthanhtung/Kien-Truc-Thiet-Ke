@@ -1,0 +1,19 @@
+package Decorator_pattern.B1;
+
+public class BieuThucDecorator extends BieuThuc{
+    BieuThuc bieuThuc;
+
+    public BieuThucDecorator(BieuThuc bieuThuc) {
+        this.bieuThuc = bieuThuc;
+    }
+
+    @Override
+    public float GiaTri() {
+        return bieuThuc.GiaTri();
+    }
+
+    @Override
+    public String BieuThuc() {
+        return bieuThuc.BieuThuc();
+    }
+}
